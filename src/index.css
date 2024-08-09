@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
+.bg-img{
+    background: url('/src/asset/crypto.png.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
