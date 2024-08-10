@@ -121,7 +121,7 @@
 import { useState, useEffect } from "react";
 import { GiBattery100 } from "react-icons/gi";
 import { FaArrowLeft, FaRegCirclePlay } from "react-icons/fa6";
-import { IoMdArrowDropdown } from "react-icons/io";
+//import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import CardQRC from "./CardQRC";
 import { Link, useLocation } from "react-router-dom";
@@ -205,19 +205,19 @@ export const DepositView = () => {
                 </div>
                 <p className="text-gray-200">{location.state.coin}</p>
               </div>
-              <IoMdArrowDropdown
+              {/* <IoMdArrowDropdown
                 className={`transition-transform ${
                   isCoinsOpen ? "rotate-180" : ""
                 }`}
-              />
+              /> */}
             </div>
-            {isCoinsOpen && (
+            {/* {isCoinsOpen && (
               <div className="bg-slate-900 p-2 rounded-md shadow-md mt-2">
                 <p className="text-gray-300">Option 1</p>
                 <p className="text-gray-300">Option 2</p>
                 <p className="text-gray-300">Option 3</p>
               </div>
-            )}
+            )} */}
             <h1 className="text-xl py-2 font-semibold">Network</h1>
             <div
               className="bg-slate-900 py-2 rounded-md p-2 flex justify-between items-center cursor-pointer hover:bg-slate-800 transition-colors"
@@ -229,19 +229,19 @@ export const DepositView = () => {
                 </div>
                 <p className="text-gray-200">{location.state.network}</p>
               </div>
-              <IoMdArrowDropdown
+              {/* <IoMdArrowDropdown
                 className={`transition-transform ${
                   isNetworkOpen ? "rotate-180" : ""
                 }`}
-              />
+              /> */}
             </div>
-            {isNetworkOpen && (
+            {/* {isNetworkOpen && (
               <div className="bg-slate-900 p-2 rounded-md shadow-md mt-2">
                 <p className="text-gray-300">Option 1</p>
                 <p className="text-gray-300">Option 2</p>
                 <p className="text-gray-300">Option 3</p>
               </div>
-            )}
+            )} */}
           </div>
 
           <CardQRC address={address} />
@@ -273,7 +273,9 @@ export const DepositView = () => {
               </button>
               <button
                 className="bg-[#fed503] w-full rounded-md py-2 text-black hover:bg-orange-400 transition-colors"
-                onClick={() => setIsModalOpen(true)} // Open the modal
+                onClick={() =>{
+                  navigator.clipboard.writeText(address);
+                  setIsModalOpen(true)}} // Open the modal
               >
                 Copy Address
               </button>

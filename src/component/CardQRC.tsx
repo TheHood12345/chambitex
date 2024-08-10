@@ -1,6 +1,7 @@
 import logo from "../asset/QR-removebg-preview.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsCopy } from "react-icons/bs";
+import { useState } from "react";
 
 
 interface GetAddress {
@@ -8,6 +9,9 @@ interface GetAddress {
 }
 
 const CardQRC: React.FC<GetAddress> = ({address}) => {
+
+  let [copied_text, set_copied_text] = useState("");
+
   return (
     <div className="mt-4 px-2 p-2 py-4">
       <div className="bg-gray-800 py-5 rounded-md p-2">
@@ -23,10 +27,19 @@ const CardQRC: React.FC<GetAddress> = ({address}) => {
             <h1 className="text-sm flex-1 break-words mr-2" style={{userSelect:"all"}}>
             {address}
             </h1>
-            <div className="flex-shrink-0">
-              <BsCopy />
+            <div className="flex-shrink-0" style={{cursor:"pointer"}} onClick={()=>{
+              navigator.clipboard.writeText(address).then(()=>{
+                set_copied_text("Address copied to clipboard");
+                setTimeout(()=>{
+                    set_copied_text("");
+                },3000);
+                
+              });
+            }}>
+              <BsCopy style={{color:"yellow"}} />
             </div>
           </div>
+          <p style={{color:"green",width:"100%",fontWeight:"bold",fontStyle:"italic",textAlign:"center"}}>{copied_text}</p>
         </div>
       </div>
     </div>
