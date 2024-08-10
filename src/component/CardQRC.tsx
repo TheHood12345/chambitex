@@ -20,7 +20,7 @@ const CardQRC: React.FC<GetAddress> = ({address}) => {
             <IoIosArrowForward />
           </div>
           <div className="flex justify-between items-center p-2">
-            <h1 className="text-sm flex-1 break-words mr-2">
+            <h1 className="text-sm flex-1 break-words mr-2" style={{userSelect:"all"}}>
             {address}
             </h1>
             <div className="flex-shrink-0">

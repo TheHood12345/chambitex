@@ -3,14 +3,20 @@ import { IoMdHeadset } from "react-icons/io";
 
 import logo from "../../../asset/chambit.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  let navigate = useNavigate();
+  let userToken = localStorage.getItem("userToken");
 
-  const handleopen = () => {
+  const handleopen = async() => {
     setOpen(!open);
+    if(userToken){
+      navigate("/subHead");
+    }
   };
+
 
   return (
     <div className="bg-gray-950 text-white shadow-lg fixed top-0 z-10 left-0 w-full h-[80px]">

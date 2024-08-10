@@ -171,7 +171,7 @@ export const Asset = () => {
         {/* third card */}
         <div className="py-4 rounded-lg flex justify-between items-center p-2 text-lg w-full mt-2 gap-4">
           <div className="w-full py-4 flex justify-center bg-gray-800 flex-col items-center rounded-md">
-            <Link to="/depositview">
+            <Link to="/depositdetails">
               <FaTradeFederation />
               <p className="p-1 text-sm">Deposit</p>
             </Link>
@@ -183,7 +183,7 @@ export const Asset = () => {
             </Link>
           </div>
           <div className="w-full py-4 flex justify-center bg-gray-800 flex-col items-center rounded-md">
-            <Link to="">
+            <Link to="/swap">
               <FaTradeFederation />
               <p className="p-1 text-sm">Swap</p>
             </Link>

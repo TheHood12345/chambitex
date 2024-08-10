@@ -11,3 +11,7 @@
     background-size: cover;
     background-position: center;
 }
+
+body{
+    user-select: none;
+}

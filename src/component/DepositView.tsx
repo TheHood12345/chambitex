@@ -181,7 +181,7 @@ export const DepositView = () => {
         <div className="bg-gray-950 py-3 fixed top-0 w-full left-0 right-0 shadow-md">
           <div className="flex items-center justify-between p-2">
             <h1 className="font-bold text-2xl flex items-center gap-1 justify-center">
-              <Link to="/depositcrypto">
+              <Link to="/asset">
                 <FaArrowLeft size={20} className="text-sm" />
               </Link>
               Deposit
